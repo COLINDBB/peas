@@ -1,0 +1,34 @@
+<head>
+<title> Peas </title>
+<meta charset="UTF-8">
+{% load static %}
+<link rel="stylesheet" href="{% static "PeasApp/show_image.css" %}">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+
+</body>
+<h1>PEAS</h1>
+    <form action="/show_images" id="date-input-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+
+<div id="meta-box">
+    <div class="metabox-col metabox-col-small" id="image_list_container">
+        <h2 id=image_list_header>Images</h2>
+        <div id="image_list">
+            {% for image in filenames  %}
+                <button class="display_button" path={{ image.filename}} title="{{ image.nickname }}">{{ image.nickname }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="metabox-col metabox-col-big" id="image_container">
+        <h2 id="main_image_nickname"></h2>
+        <img id="main_image" alt="">
+    </div>
+</div>
+
+
+<script src="{% static "PeasApp/show_image.js" %}"></script>
+</body>
