@@ -117,5 +117,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
+
+IMAGE_PATH = os.path.join(BASE_DIR, "PeasApp/static/PeasApp/images")
+TIMELAPSE_PATH = os.path.join(BASE_DIR, "PeasApp/static/PeasApp/timelapses")
+
+
+# Camera Parameters
+IMAGE_WIDTH=640
+IMAGE_HEIGHT=480
